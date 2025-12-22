@@ -1,0 +1,26 @@
+# Dependency folders
+node_modules/
+venv/
+.venv/
+env/
+
+# Version control
+.git/
+.gitignore
+
+# Environment secrets (Docker should use its own variables)
+*.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Build files
+dist/
+build/
