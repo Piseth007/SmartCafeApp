@@ -1,0 +1,25 @@
+name: SmartCafe CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        pip install fastapi uvicorn pydantic motor python-dotenv
+        
+    - name: Run Syntax Check
+      run: |
+        # This checks if your Python code has errors before deploying
+        python -m compileall .
